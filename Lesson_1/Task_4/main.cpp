@@ -12,55 +12,36 @@ int main(){
     cout << "Please choose the option: ";
     cin >> userInput;
 
+    cout << "First number: ";
+    cin >> num1;
+    cout << "Second number: ";
+    cin >> num2;
+
     switch(userInput) {
         case '1':
-            cout << "First number: ";
-            cin >> num1;
-            cout << "Second number: ";
-            cin >> num2;
-
             cout << "Result: " << num1 + num2;
             break;
-        case '2':
-            cout << "First number: ";
-            cin >> num1;
-            cout << "Second number: ";
-            cin >> num2;
 
+        case '2':
             cout << "Result: " << num1 - num2;
             break;
-        case '3':
-            cout << "First number: ";
-            cin >> num1;
-            cout << "Second number: ";
-            cin >> num2;
 
+        case '3':
             cout << "Result: " << num1 * num2;
             break;
-        case '4':
-            cout << "First number: ";
-            cin >> num1;
-            cout << "Second number: ";
-            cin >> num2;
 
+        case '4':
             cout << "Result: " << num1 / num2;
             break;
-        case '5':
-            cout << "Number: ";
-            cin >> num1;
-            cout << "Exponentiation number: ";
-            cin >> num2;
 
+        case '5':
             cout << "Result: " << pow(num1, num2);
             break;
-        case '6':
-            cout << "Number under root: ";
-            cin >> num1;
-            cout << "Power of root: ";
-            cin >> num2;
 
+        case '6':
             cout << "Result: " << pow(num1, 1.0/num2);
             break;
+
         default:
             cout << "Error! Please choose 1-6";
     }
