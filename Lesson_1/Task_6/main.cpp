@@ -3,17 +3,17 @@
 using namespace std;
 
 int main(){
-    int size, i, j, space;
+    int size, line, counter, space;
 
     cout << "Hello, this program can draw an x-mas tree";
     cout << "\nEnter a size of tree: ";
     cin >> size;
 
-    for(i = 1; i <= size; ++i){
-        for(j = 1; j <= size-i; ++j){
+    for(line = 1; line <= size; ++line){
+        for(counter = 1; counter <= size-line; ++counter){
             cout << " ";
         }
-        for (j = 0; j < 2*i-1; ++j){
+        for (counter = 0; counter < 2*line-1; ++counter){
             cout << "*";
         }
         cout << endl;
