@@ -55,6 +55,7 @@ int main() {
         case 4:
             cout << "\nMinimal amount of accounts: " << *min_element(bank, bank+9) << endl;
             cout << "Maximal amount of accounts: " << *max_element(bank, bank+9) << endl;
+            break;
         default:
             cout << "\nError! Wrong option!" << endl;
             break;
