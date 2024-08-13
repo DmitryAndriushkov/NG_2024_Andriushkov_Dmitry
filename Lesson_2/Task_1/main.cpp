@@ -4,13 +4,14 @@
 using namespace std;
 
 int main() {
-	float bank[10] = {0,0,0,0,0,0,0,0,0,0}, sum = 0;
-	int userEnterAcc, userEnterOption, temp;
+	float bank[10] = {0,0,0,0,0,0,0,0,0,0}, sum = 0, *minVal, *maxVal;
+	int userEnterAcc, userEnterOption, temp, minIndex, maxIndex;
 
 
 	while(true) {
 		cout << "Enter an account(1-10): ";
 		cin >> userEnterAcc;
+		cout << "Balance: " << bank[userEnterAcc - 1] << endl;
 		if(userEnterAcc < 1 || userEnterAcc > 10) {
 			cout << "Wrong card!" << endl;
 			continue;
@@ -47,14 +48,20 @@ int main() {
             bank[userEnterAcc-1] -= temp;
             break;
         case 3:
-            for(int i = 0;i < 10; ++i){
-                sum += bank[i];
+            for(int counter = 0;counter < 10; ++counter){
+                sum += bank[counter];
             }
             cout << "\nSum of accounts: " << sum << endl;
             break;
         case 4:
-            cout << "\nMinimal amount of accounts: " << *min_element(bank, bank+9) << endl;
-            cout << "Maximal amount of accounts: " << *max_element(bank, bank+9) << endl;
+            minVal = min_element(bank, bank+9);
+            maxVal = max_element(bank, bank+9);
+
+            minIndex = distance(bank, minVal) + 1;
+            maxIndex = distance(bank, maxVal) + 1;
+
+            cout << "Minimal balance " << minIndex << ") " << *minVal << endl;
+            cout << "Maximal balance " << maxIndex << ") " << *maxVal << endl;
             break;
         default:
             cout << "\nError! Wrong option!" << endl;
