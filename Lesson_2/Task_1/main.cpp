@@ -9,7 +9,7 @@ int main() {
 
 
 	while(true) {
-		cout << "Enter an account(1-10): ";
+		cout << "\nEnter an account(1-10): ";
 		cin >> userEnterAcc;
 		cout << "Balance: " << bank[userEnterAcc - 1] << endl;
 		if(userEnterAcc < 1 || userEnterAcc > 10) {
@@ -21,7 +21,8 @@ int main() {
 		cout << "\n1)Put money on account";
 		cout << "\n2)Withdraw the money";
 		cout << "\n3)Sum of all accounts";
-		cout << "\n4)Max'/'min of all accounts\n";
+		cout << "\n4)Max'/'min of all accounts";
+		cout << "\n5)Exit\n";
 		cin >> userEnterOption;
 
 		switch(userEnterOption) {
@@ -35,7 +36,7 @@ int main() {
 			bank[userEnterAcc-1] += temp;
 			break;
         case 2:
-            cout << "\nChoose your withdraw: \n";
+            cout << "\nChoose your withdraw: ";
             cin >> temp;
             if(temp < 0){
 			    cout << "Error!" << endl;
@@ -63,6 +64,8 @@ int main() {
             cout << "Minimal balance " << minIndex << ") " << *minVal << endl;
             cout << "Maximal balance " << maxIndex << ") " << *maxVal << endl;
             break;
+        case 5:
+            return 0;
         default:
             cout << "\nError! Wrong option!" << endl;
             break;
